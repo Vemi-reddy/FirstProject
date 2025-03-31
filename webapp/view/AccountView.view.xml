@@ -1,0 +1,162 @@
+<mvc:View controllerName="test.controller.AccountView"    xmlns= "sap.m"
+    xmlns:mvc= "sap.ui.core.mvc" 	xmlns:f= "sap.ui.layout.form" 	xmlns:table= "sap.ui.table"
+    xmlns:core= "sap.ui.core"
+     >
+    <Page id="page" title="{i18n>title}">
+    	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm 		
+		        layout="ColumnLayout"
+				columnsM="1"
+		          columnsL="3"
+			       columnsXL="3"
+			>
+			<f:content>
+				<!-- <core:Title /> -->
+				<Label text="{i18n>CompanyCode}" required="true"  />
+                <Input id="value" showValueHelp="true" valueHelpRequest= "onCompCode" ></Input>
+                <Label text="{i18n>DocumentDate}" required="true"/>
+                	<DatePicker
+					calendarWeekNumbering="Default"
+					/>
+                <Label text="{i18n>PostingDate}" required="true" />
+                <DatePicker
+					calendarWeekNumbering="Default"
+					/>
+                    <!-- <core:Title /> -->
+                <Label text="{i18n>DocumentType}" required="true"/>
+                <Input  showValueHelp="true" valueHelpRequest="onRequest" id="value1"   ></Input>
+                <Label text="{i18n>PostingPeriod}" required="true" />
+                <DatePicker
+					calendarWeekNumbering="Default"
+					/>
+                <Label text="{i18n>FiscalYear}" required="true" />
+                <DatePicker
+					 valueFormat="yyyy"
+					     displayFormat="y"
+					/>
+                 <!-- <core:Title /> -->
+                <Label text="{i18n>Currency}" required="true" />
+                <Input showValueHelp="true"  valueHelpRequest="onValueHelpRequest" id="idCurrencyInput"  ></Input>
+                <Label text="{i18n>HeaderText}" />
+				<Input  showValueHelp="true" id="value2" valueHelpRequest="onFragment" >
+                   <!-- <core:Fragment fragmentName="test.fragment.listitem" type="XML"/> -->
+				   </Input>
+                <!-- <Label text="{i18n>Reference}"  />
+                <Input ></Input> -->
+				
+				
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+    	<table:Table
+				id="table1"
+				rows="{/Orders}"
+				
+				selectionMode="MultiToggle"
+				scrollThreshold="10"
+				alternateRowColors="true"
+				busyIndicatorDelay="1000"
+				busyIndicatorSize="Medium"
+				threshold="5"
+				
+				
+				
+                 
+				
+				
+				
+				
+				>
+				<table:extension>
+					<OverflowToolbar style="Clear">
+						<Title  text="Items"  />
+						<ToolbarSpacer/>
+							<Button text="Click" type="Ghost" press="onClick"></Button>
+						<Button text="Download Template" icon="sap-icon://download" type="Ghost"></Button>
+                        <Button text="Upload" icon="sap-icon://upload" type="Ghost"></Button>
+                        <Button text="Simulation" icon="sap-icon://validate" type="Attention"></Button>
+                        <Button text="Post" icon="sap-icon://repost" type="Accept"></Button>
+                        <Button text="Add" press="onAdd" icon="sap-icon://add" type="Emphasized"></Button>
+                        <Button text="Delete" press="onDelete" icon="sap-icon://delete" type="Reject"></Button>
+                        <Button text="Clear Filters" icon="sap-icon://decline" type="Ghost"></Button>
+                        
+					</OverflowToolbar>
+				</table:extension>
+				<table:columns >
+					<table:Column resizable="true" >
+						<Label text="OrderID" /> 
+						<table:template>
+							<Text text="{OrderID}"  />
+						</table:template>
+					</table:Column>
+                    <table:Column resizable="true">
+						<Label text="CustomerID" wrapping="true" />
+						<!-- wrapping property wraps the text if long -->
+						<table:template>
+							<Text text="{CustomerID}"  />
+						</table:template>
+					</table:Column>
+                    <table:Column resizable="true">
+						<Label text="EmployeeID" wrapping="true" />
+						<table:template>
+							<Text text="{EmployeeID}"  />
+						</table:template>
+					</table:Column>
+                    <table:Column resizable="true">
+						<Label text="ShipVia" />
+						<table:template>
+							<Text text="{ShipVia}"  />
+						</table:template>
+					</table:Column>
+                    <table:Column resizable="true">
+						<Label text="ShipCountry" />
+						<table:template>
+							<Text text="{ShipCountry}"  />
+						</table:template>
+					</table:Column>
+                     <table:Column resizable="true">
+						<Label text="ShipCity" />
+						<table:template>
+							<Text text="{ShipCity}"  />
+						</table:template>
+					</table:Column>
+                     <table:Column resizable="true">
+						<Label text="ShipRegion" />
+						<table:template>
+							<Text text="{ShipRegion}"  />
+						</table:template>
+					</table:Column>
+                     <table:Column resizable="true">
+						<Label text="ShipPostalCode" />
+						<table:template>
+							<Text text="{ShipPostalCode}"  />
+						</table:template>
+					</table:Column>
+                     <table:Column resizable="true">
+						<Label text="ShipName" />
+						<table:template>
+							<Text text="{ShipName}"  />
+						</table:template>
+					</table:Column>
+                     <table:Column resizable="true">
+						<Label text="Freight" />
+						<table:template>
+							<Text text="{Freight}"  />
+						</table:template>
+					</table:Column>
+                     <table:Column resizable="true">
+						<Label text="ShipAddress" />
+						<table:template>
+							<Text text="{ShipAddress}"  />
+						</table:template>
+					</table:Column>
+                    
+
+					
+				</table:columns>
+				<table:footer>
+					<OverflowToolbar  ></OverflowToolbar>
+				</table:footer>
+			</table:Table>
+    </Page>
+</mvc:View>

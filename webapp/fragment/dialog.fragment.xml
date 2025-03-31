@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog  title="Product List" >
+        <content>
+            <List id="listId" mode="SingleSelect" selectionChange="onSelect"/>
+            <!--mode should be defined first to call selectionchange function -->
+        </content>
+        <buttons>
+            <Button text="Close" press="onClose"/>
+        </buttons>
+    </Dialog> 
+ 
+</core:FragmentDefinition>

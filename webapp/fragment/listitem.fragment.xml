@@ -1,0 +1,75 @@
+<core:FragmentDefinition  xmlns="sap.m"   xmlns:table="sap.ui.table" 	 xmlns:core="sap.ui.core" >
+          <Dialog  >
+          <customHeader >
+
+          <Toolbar >
+          <ToolbarSpacer ></ToolbarSpacer>
+          <Title text="Northwind" ></Title>
+          <ToolbarSpacer ></ToolbarSpacer>
+          <Button icon="sap-icon://decline" press="onDecline" ></Button>
+          </Toolbar>
+          </customHeader>
+		        
+           <Button text="Territories"  type="Attention" press="onTerritory" class="sapUiLargeMarginBegin" ></Button>
+           			
+         <Button text="Suppliers" type="Attention"  press="onSupplier" class= "sapUiLargeMarginBegin"></Button>
+          <SearchField liveChange="onSearchField" id= "IdSearch"></SearchField>
+          	
+        	<table:Table rows="{/Territories}"    visible="false" id="idTerritory" >
+              <table:columns>
+              
+                 <table:Column >
+                    <Label text="name"></Label>
+                    <table:template>
+                       <Text text="{TerritoryDescription}"></Text>
+                    </table:template>
+                   </table:Column>
+                    <table:Column >
+                    <Label text="id"></Label>
+                    <table:template>
+                       <Text text="{TerritoryID}"></Text>
+                    </table:template>
+                   </table:Column>
+                    <table:Column >
+                    <Label text="Region"></Label>
+                    <table:template>
+                       <Text text="{RegionID}"></Text>
+                    </table:template>
+                   </table:Column>
+                      
+              </table:columns>
+              
+             
+            
+            </table:Table>  
+          <table:Table rows="{/Suppliers}" visible="false" id="idSupplier" >
+              <table:columns>
+              
+                 <table:Column >
+                    <Label text="name"></Label>
+                    <table:template>
+                       <Text text="{ContactName}"></Text>
+                    </table:template>
+                   </table:Column>
+                    <table:Column >
+                    <Label text="id"></Label>
+                    <table:template>
+                       <Text text="{SupplierID}"></Text>
+                    </table:template>
+                   </table:Column>
+                    <table:Column >
+                    <Label text="Region"></Label>
+                    <table:template>
+                       <Text text="{Region}"></Text>
+                    </table:template>
+                   </table:Column>
+                      
+              </table:columns>
+              
+             
+            
+            </table:Table>  
+          
+       
+          </Dialog>
+</core:FragmentDefinition>

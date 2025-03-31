@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="idCurrencyDialog" title="Select Currency"
+            contentWidth="400px" contentHeight="300px"
+            draggable="true" resizable="true">
+        
+        <List id="idCurrencyList" mode="SingleSelectMaster"
+              items="{currencyModel>/Currencies}">
+            <StandardListItem title="{currencyModel>CurrencyCode}" 
+                              description="{currencyModel>CurrencyName}" />
+        </List>
+        
+        <beginButton>
+            <Button text="OK" press=".onCurrencySelect" />
+        </beginButton>
+        
+        <endButton>
+            <Button text="Cancel" press=".onCloseDialog" />
+        </endButton>
+        
+    </Dialog>
+</core:FragmentDefinition>
